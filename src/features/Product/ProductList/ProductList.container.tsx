@@ -70,6 +70,8 @@ const ProductListContainer = () => {
             addProducts(newProducts.data);
             setPage(page + 1);
           } else {
+            // Had to use @ts-expect-error, beacuse json-server does not return the data as the
+            // value of data property in response while we are trying to fetch all of the data.
             // @ts-expect-error
             setProducts(filteredProducts(newProducts));
           }
