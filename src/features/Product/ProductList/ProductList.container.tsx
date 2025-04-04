@@ -4,17 +4,18 @@ import { useEffect, useRef, useState } from "react";
 import Search from "../components/Search/Search";
 import { Loading } from "../../../common/components/Loading";
 import ProductCard from "../components/ProductCard/ProductCard";
+import { Empty } from "antd";
 
 // Types
 import { IGetProductListRequest } from "../services/types/get-product-list-request.type";
 import { IProduct } from "../services/types/get-product-list-response.type";
 
-// Service
+// Services
 import { fetchProductList } from "../services/requests/fetch-products";
 
 // Stores
 import { useFilterStore } from "../../../common/stores/filter-store";
-import { useProductListStore } from "../../../common/stores/products-store";
+import { useProductsStore } from "../../../common/stores/products-store";
 
 // Styles
 import "./ProductList.scss";
@@ -26,12 +27,12 @@ const ProductListContainer = () => {
 
   const selectedCategories = useFilterStore((state) => state.categories);
   const searchText = useFilterStore((state) => state.searchText);
-  const products = useProductListStore((state) => state.products);
+  const products = useProductsStore((state) => state.products);
   const page = useFilterStore((state) => state.page);
 
   const setPage = useFilterStore((state) => state.setPage);
-  const addProducts = useProductListStore((state) => state.addProducts);
-  const setProducts = useProductListStore((state) => state.setProducts);
+  const addProducts = useProductsStore((state) => state.addProducts);
+  const setProducts = useProductsStore((state) => state.setProducts);
 
   const shouldFetchAll = Boolean(searchText || selectedCategories.size);
 
@@ -103,14 +104,21 @@ const ProductListContainer = () => {
   return (
     <div className="product-list-container">
       <Search />
+
       <main className="product-list">
         {products.map((product: IProduct) => (
           <ProductCard key={`${product.id}-${product.title}`} {...product} />
         ))}
       </main>
+
       {!shouldFetchAll && (
         <span ref={lastElement} className="product-list-empty-element" />
       )}
+
+      {!loading && !products.length && (
+        <Empty description="No Products Found" />
+      )}
+
       {loading && <Loading />}
     </div>
   );

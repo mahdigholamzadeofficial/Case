@@ -3,13 +3,13 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { CATEGORIES } from "../../../constants/constant";
 import { useFilterStore } from "../../stores/filter-store";
 import "./CategoryFilter.scss";
-import { useProductListStore } from "../../stores/products-store";
+import { useProductsStore } from "../../stores/products-store";
 
 const CategoryFilter = () => {
   const categories = useFilterStore((state) => state.categories);
   const setCategories = useFilterStore((state) => state.setCategories);
   const setPage = useFilterStore((state) => state.setPage);
-  const setProducts = useProductListStore((state) => state.setProducts);
+  const setProducts = useProductsStore((state) => state.setProducts);
 
   const navigate = useNavigate();
   const location = useLocation();

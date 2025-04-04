@@ -9,7 +9,7 @@ import { useDebounce } from "../../../../common/hooks/useDebounce";
 
 // Stores
 import { useFilterStore } from "../../../../common/stores/filter-store";
-import { useProductListStore } from "../../../../common/stores/products-store";
+import { useProductsStore } from "../../../../common/stores/products-store";
 
 // Styles
 import "./Search.scss";
@@ -21,7 +21,7 @@ const Search = () => {
   const searchText = useFilterStore((state) => state.searchText);
   const setSearchText = useFilterStore((state) => state.setSearchText);
   const setPage = useFilterStore((state) => state.setPage);
-  const setProducts = useProductListStore((state) => state.setProducts);
+  const setProducts = useProductsStore((state) => state.setProducts);
 
   const debouncedSearch = useDebounce(searchText, 500);
 

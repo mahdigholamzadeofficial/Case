@@ -8,7 +8,8 @@ $border-radius: 8px;
   align-items: flex-start;
   width: 100%;
   max-width: 400px;
-  margin: 10px 0;
+  margin-top: 10px;
+  margin-bottom: 30px;
 
   &__input {
     height: 40px;
@@ -25,14 +26,5 @@ $border-radius: 8px;
   &__icon {
     font-size: 18px;
     color: $icon-color;
-
-    &--clear {
-      cursor: pointer;
-      transition: color 0.2s ease-in-out;
-
-      &:hover {
-        color: darken($icon-color, 15%);
-      }
-    }
   }
 }
