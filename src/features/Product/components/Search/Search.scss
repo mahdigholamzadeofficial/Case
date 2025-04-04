@@ -1,0 +1,38 @@
+$primary-color: #1890ff;
+$icon-color: #888;
+$border-radius: 8px;
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px 0;
+
+  &__input {
+    height: 40px;
+    font-size: 16px;
+    border-radius: $border-radius;
+    transition: all 0.3s ease-in-out;
+
+    &:focus {
+      border-color: $primary-color;
+      box-shadow: 0 0 5px rgba($primary-color, 0.5);
+    }
+  }
+
+  &__icon {
+    font-size: 18px;
+    color: $icon-color;
+
+    &--clear {
+      cursor: pointer;
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+        color: darken($icon-color, 15%);
+      }
+    }
+  }
+}

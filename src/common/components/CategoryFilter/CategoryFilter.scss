@@ -1,0 +1,43 @@
+$primary-color-40: #5f5feb;
+$primary-color-10: #9494f5;
+
+.category-filter {
+  width: 100%;
+  h4 {
+    margin-bottom: 16px;
+    font-size: 1.25rem;
+    color: #333;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+  }
+
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    appearance: none;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+
+    &:checked {
+      background-color: $primary-color-40;
+      border-color: $primary-color-40;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  label {
+    font-size: 1rem;
+    color: #333;
+  }
+}

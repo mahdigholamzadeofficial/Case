@@ -1,0 +1,27 @@
+.sidebar {
+  background-color: #e0ecff;
+  height: 100vh;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+
+  @media (max-width: 768px) {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100vw;
+    transform: translateX(-100%);
+    z-index: 100;
+  }
+
+  &--collapsed {
+    @media (max-width: 768px) {
+      transform: translateX(0);
+    }
+  }
+}
+
+.sidebar__content {
+  padding: 16px;
+  height: 100%;
+  position: fixed;
+}

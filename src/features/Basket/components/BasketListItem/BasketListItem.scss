@@ -1,0 +1,31 @@
+.basket-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #e0e0e0;
+
+  &__image {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 16px;
+    color: #333;
+  }
+
+  &__details {
+    font-size: 14px;
+    color: #666;
+  }
+}

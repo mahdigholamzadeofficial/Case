@@ -1,0 +1,9 @@
+.basket-list {
+  padding: 24px;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+
+  &__footer {
+    margin-top: 24px;
+  }
+}
